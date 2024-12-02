@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Apoorv Kishore - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
         :root {
-            --primary-color: #2d3436;
-            --secondary-color: #0984e3;
+            --primary-color: #1a237e;    /* Dark blue */
+            --secondary-color: #0984e3;  /* Medium blue */
             --text-color: #2d3436;
-            --bg-color: #ffffff;
-            --section-bg: #f5f6fa;
-            --dark-blue: #1a237e;     /* Dark blue for backgrounds */
-            --medium-blue: #3949ab;   /* Medium blue for gradients */
-            --light-blue: #5c6bc0;    /* Light blue for accents */
-            --dark-black: #2d3436;    /* Dark black from top bar */
-            --white: #ffffff;         /* White */
+            --white: #ffffff;
         }
 
         * {
@@ -29,7 +25,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background: var(--bg-color);
+            background: var(--white);
         }
 
         /* Navigation */
@@ -95,17 +91,7 @@
             overflow: hidden;
         }
 
-/*         .profile-image-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            opacity: 0.9;
-        } */
-       .profile-image-section::before {
+        .profile-image-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -114,7 +100,7 @@
             bottom: 0;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             opacity: 0.9;
-         }
+        }
 
         .profile-image {
             width: 400px;
@@ -148,24 +134,131 @@
             line-height: 1.2;
         }
 
-        .profile-content p:first-of-type {
+        .profile-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .profile-content .title {
             font-size: 1.4rem;
-            margin-bottom: 2rem;
             color: var(--secondary-color);
             font-weight: 500;
             white-space: nowrap;
+            margin-bottom: 2rem;
         }
 
-        .profile-content p:last-of-type {
-            font-size: 1.2rem;
-            color: #666;
+        .profile-content .quote {
             font-style: italic;
-            line-height: 1.8;
+            color: #666;
             padding-left: 1rem;
-            border-left: 3px solid var(--accent-color);
+            border-left: 3px solid var(--secondary-color);
         }
 
-        /* Responsive Design Update */
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-top: 2rem;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Common Section Styles */
+        section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-divider {
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 4rem auto;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
         @media (max-width: 1024px) {
             .profile-container {
                 grid-template-columns: 1fr;
@@ -187,225 +280,13 @@
             .profile-content h1 {
                 font-size: 2.5rem;
             }
-        }
-        
-        section {
-            padding: 5rem 2rem;
-            position: relative;
-            overflow: hidden;
+
+            .profile-content .title {
+                white-space: normal;
+            }
         }
 
-        section:nth-child(odd) {
-            background: var(--primary-color);
-            color: var(--white);
-            position: relative;
-        }
-        
-/*         section:nth-child(odd)::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            opacity: 0.9;
-            z-index: 1;
-        } */
-        /* Update the gradient to match profile section */
-       section:nth-child(odd)::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            opacity: 0.9;
-            z-index: 1;
-        }
-        
-/*        section:nth-child(odd)::before {
-            content: '';
-            position: absolute;
-            top: -100px;  
-            left: 0;
-            right: 0;
-            height: 200px;  
-            background: inherit;
-            transform: skewY(-3deg);  
-            z-index: 1;
-        }  */
-        
-        /* Update section content to be visible over gradient */
-        section:nth-child(odd) .section-container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Update section titles in dark sections */
-        section:nth-child(odd) .section-title::after {
-            background: var(--white);
-        }
-        
-        /* Update contact items and project cards in dark sections */
-        section:nth-child(odd) .contact-item,
-        section:nth-child(odd) .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--white);
-        }
-        
-        /* Update icons in dark sections */
-        section:nth-child(odd) .contact-item i {
-            color: var(--white);
-        }
-
-        
-        section:nth-child(even) {
-            background: var(--white);
-            color: var(--dark-black);
-        }
-        
-        section:nth-child(even) .section-title {
-            color: var(--secondary-color);
-        }
-        
-        /* Add decorative element for section transitions */
-        section::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: inherit;
-            transform: skewY(-2deg);
-            z-index: 1;
-        }
-        
-        /* Update section containers */
-        .section-container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* Update section titles with accent line */
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--medium-blue);
-        }
-        
-        
-        /* Update buttons for consistency */
-        .btn-download {
-            background: var(--medium-blue);
-        }
-        
-        .btn-download:hover {
-            background: var(--secondary-color);
-        }
-        
-        
-       
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .contact-item {
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .contact-item i {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* Resume Section */
-        .resume-container {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .resume-download {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .btn-download {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--secondary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .btn-download:hover {
-            background: #0769b3;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .profile-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .profile-image {
-                margin: 0 auto;
-            }
-
             .nav-links {
                 display: none;
             }
@@ -415,15 +296,13 @@
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">Your Name</div>
+            <div class="logo">Apoorv Kishore</div>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#research">Research</a>
-                <a href="#resume">Resume</a>
                 <a href="#projects">Projects</a>
                 <a href="#startup">Startup</a>
-                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
@@ -435,37 +314,16 @@
             </div>
             <div class="profile-content-section">
                 <div class="profile-content">
-                    <h1>Apoorv Kishore</h1>
-                    <p>Associate Staff Engineer | Samsung Semiconductor India R&D</p>
-                    <p>"Those who are seen dancing are often thought to be insane by those who cannot hear the music"</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="about">
-        <div class="section-container">
-            <h2 class="section-title">About Me</h2>
-            <p>Your detailed biography and professional background goes here.</p>
-        </div>
-    </section>
-
-    <section id="research">
-        <div class="section-container">
-            <h2 class="section-title">Research</h2>
-            <div class="research-content">
-                <!-- Add your research content here -->
-            </div>
-        </div>
-    </section>
-
-    <section id="resume">
-        <div class="section-container">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-container">
-                <!-- Resume content goes here -->
-                <div class="resume-download">
-                    <a href="resume.pdf" class="btn-download" target="_blank">
+                    <h1 data-aos="fade-up">Apoorv Kishore</h1>
+                    <p class="title" data-aos="fade-up" data-aos-delay="100">Associate Staff Engineer | Samsung Semiconductor India R&D</p>
+                    <p class="quote" data-aos="fade-up" data-aos-delay="200">"Those who are seen dancing are often thought to be insane by those who cannot hear the music"</p>
+                    
+                    <div class="contact-info" data-aos="fade-up" data-aos-delay="300">
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                    </div>
+                    
+                    <a href="assets/resume.pdf" class="btn-download" data-aos="fade-up" data-aos-delay="400">
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
@@ -473,43 +331,60 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="about" data-aos="fade-up">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">My Journey and Expertise</p>
+            <p>Your detailed biography and professional background goes here.</p>
+            <div class="section-divider"></div>
+        </div>
+    </section>
+
+    <section id="research" data-aos="fade-up">
+        <div class="section-container">
+            <h2 class="section-title">Research</h2>
+            <p class="section-subtitle">Scientific Contributions and Publications</p>
+            <div class="research-content">
+                <!-- Add your research content here -->
+            </div>
+            <div class="section-divider"></div>
+        </div>
+    </section>
+
+    <section id="projects" data-aos="fade-up">
         <div class="section-container">
             <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Recent Work and Achievements</p>
             <div class="projects-grid">
                 <!-- Project cards will be added here -->
             </div>
+            <div class="section-divider"></div>
         </div>
     </section>
 
-    <section id="startup">
+    <section id="startup" data-aos="fade-up">
         <div class="section-container">
             <h2 class="section-title">Startup</h2>
+            <p class="section-subtitle">Entrepreneurial Ventures</p>
             <!-- Add your startup content here -->
+            <div class="section-divider"></div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="section-container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p>your.email@example.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <h3>Phone</h3>
-                    <p>+1 234 567 890</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/yourprofile</p>
-                </div>
-            </div>
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
         </div>
-    </section>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
