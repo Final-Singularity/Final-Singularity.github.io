@@ -64,44 +64,116 @@
 
         /* Home Section */
         #home {
-            padding-top: 100px;
+            padding: 0;
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('background.jpg');
-            background-size: cover;
+            background: none;
         }
 
         .profile-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+            max-width: none;
+            margin: 0;
+            padding: 0;
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
+            grid-template-columns: 45% 55%;
+            gap: 0;
+            min-height: 100vh;
+        }
+
+        .profile-image-section {
+            background: var(--primary-color);
+            padding: 2rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            opacity: 0.9;
         }
 
         .profile-image {
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--secondary-color);
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .profile-content-section {
+            background: white;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-content {
+            max-width: 600px;
         }
 
         .profile-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
             color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.2;
         }
 
-        .profile-content p {
-            font-size: 1.2rem;
+        .profile-content p:first-of-type {
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            color: var(--text-color);
+            color: var(--secondary-color);
+            font-weight: 500;
         }
 
+        .profile-content p:last-of-type {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+            line-height: 1.8;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Responsive Design Update */
+        @media (max-width: 1024px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image-section {
+                min-height: 60vh;
+            }
+
+            .profile-image {
+                width: 300px;
+                height: 300px;
+            }
+
+            .profile-content-section {
+                padding: 3rem 2rem;
+            }
+
+            .profile-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+    
         /* Common Section Styles */
         section {
             padding: 5rem 2rem;
@@ -228,15 +300,19 @@
 
     <section id="home">
         <div class="profile-container">
-            <img src="assets/2.jpg" alt="Apoorv Kishore" class="profile-image">
-            <div class="profile-content">
-                <h1>Apoorv Kishore</h1>
-                <p>Associate Staff Engineer | Samsung Semiconductor India R&D</p>
-                <p><i>"Those who are seen dancing are often thought to be insane by those who cannot hear the music"</i></p>
+            <div class="profile-image-section">
+                <img src="assets/2.jpg" alt="Apoorv Kishore" class="profile-image">
+            </div>
+            <div class="profile-content-section">
+                <div class="profile-content">
+                    <h1>Apoorv Kishore</h1>
+                    <p>Associate Staff Engineer | Samsung Semiconductor India R&D</p>
+                    <p>"Those who are seen dancing are often thought to be insane by those who cannot hear the music"</p>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <section id="about">
         <div class="section-container">
             <h2 class="section-title">About Me</h2>
