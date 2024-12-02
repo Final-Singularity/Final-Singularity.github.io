@@ -186,13 +186,49 @@
         }
 
         section:nth-child(odd) {
-            background: var(--secondary-color);
+            background: var(--primary-color);
+            color: var(--white);
+            position: relative;
+        }
+        
+        /* Update the gradient to match profile section */
+        section:nth-child(odd)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            opacity: 0.9;
+            z-index: 1;
+        }
+        
+        /* Update section content to be visible over gradient */
+        section:nth-child(odd) .section-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Update section titles in dark sections */
+        section:nth-child(odd) .section-title::after {
+            background: var(--white);
+        }
+        
+        /* Update contact items and project cards in dark sections */
+        section:nth-child(odd) .contact-item,
+        section:nth-child(odd) .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+        
+        /* Update icons in dark sections */
+        section:nth-child(odd) .contact-item i {
             color: var(--white);
         }
 
-        section:nth-child(odd) .section-title {
-            color: var(--white);
-        }
         
         section:nth-child(even) {
             background: var(--white);
@@ -243,18 +279,6 @@
             background: var(--medium-blue);
         }
         
-        /* Update project cards for dark sections */
-        section:nth-child(odd) .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Update contact items for dark sections */
-        section:nth-child(odd) .contact-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-        }
         
         /* Update buttons for consistency */
         .btn-download {
@@ -265,18 +289,6 @@
             background: var(--secondary-color);
         }
         
-        /* Add subtle gradient overlays for visual interest */
-        section:nth-child(odd)::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
-            opacity: 0.3;
-            z-index: 1;
-        }
         
        
         /* Projects Grid */
