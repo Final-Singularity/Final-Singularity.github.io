@@ -102,9 +102,19 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             opacity: 0.9;
         }
+/*        .profile-image-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            opacity: 0.9;
+         } */
 
         .profile-image {
             width: 400px;
@@ -191,8 +201,19 @@
             position: relative;
         }
         
-        /* Update the gradient to match profile section */
         section:nth-child(odd)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            opacity: 0.9;
+            z-index: 1;
+        }
+        /* Update the gradient to match profile section */
+/*        section:nth-child(odd)::after {
             content: '';
             position: absolute;
             top: 0;
@@ -201,6 +222,17 @@
             bottom: 0;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             opacity: 0.9;
+            z-index: 1;
+        } */
+        section:nth-child(odd)::before {
+            content: '';
+            position: absolute;
+            top: -100px;  /* Increased overlap area */
+            left: 0;
+            right: 0;
+            height: 200px;  /* Increased transition area */
+            background: inherit;
+            transform: skewY(-3deg);  /* Gentler angle */
             z-index: 1;
         }
         
