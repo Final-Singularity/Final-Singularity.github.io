@@ -9,8 +9,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
         :root {
-            --primary-color: #1a237e;    /* Dark blue */
+            --dark-gray: #2d3436;       /* Dark gray for nav and titles */
             --secondary-color: #0984e3;  /* Medium blue */
+            --primary-color: #1a237e;    /* Dark blue for gradient */
             --text-color: #2d3436;
             --white: #ffffff;
         }
@@ -30,7 +31,7 @@
 
         /* Navigation */
         nav {
-            background: var(--primary-color);
+            background: var(--dark-gray);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
@@ -129,7 +130,7 @@
         .profile-content h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-color);
+            color: var(--dark-gray);
             font-weight: 700;
             line-height: 1.2;
         }
@@ -165,6 +166,22 @@
             color: #666;
         }
 
+        .home-social-links {
+            margin-top: 1rem;
+        }
+
+        .home-social-links a {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .home-social-links a:hover {
+            color: var(--dark-gray);
+            transform: translateY(-2px);
+        }
+
         .btn-download {
             display: inline-block;
             padding: 1rem 2rem;
@@ -177,7 +194,7 @@
         }
 
         .btn-download:hover {
-            background: var(--primary-color);
+            background: var(--dark-gray);
             transform: translateY(-2px);
         }
 
@@ -194,7 +211,7 @@
 
         .section-title {
             font-size: 2.5rem;
-            color: var(--text-color);
+            color: var(--dark-gray);
             margin-bottom: 1rem;
         }
 
@@ -233,29 +250,6 @@
 
         .project-content {
             padding: 1.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--white);
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .social-links {
-            margin: 1rem 0;
-        }
-
-        .social-links a {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            margin: 0 1rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
         }
 
         /* Responsive Design */
@@ -320,7 +314,11 @@
                     
                     <div class="contact-info" data-aos="fade-up" data-aos-delay="300">
                         <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-                        <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                        <div class="home-social-links">
+                            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
                     
                     <a href="assets/resume.pdf" class="btn-download" data-aos="fade-up" data-aos-delay="400">
@@ -371,19 +369,26 @@
         </div>
     </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
-        </div>
-    </footer>
-
     <script>
         AOS.init({
             duration: 1000,
             once: true,
-            offset: 100
+            offset: 200
+        });
+
+        // Fix for scroll offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const offset = 100;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
