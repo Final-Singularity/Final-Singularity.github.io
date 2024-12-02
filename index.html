@@ -12,6 +12,11 @@
             --text-color: #2d3436;
             --bg-color: #ffffff;
             --section-bg: #f5f6fa;
+            --dark-blue: #1a237e;     /* Dark blue for backgrounds */
+            --medium-blue: #3949ab;   /* Medium blue for gradients */
+            --light-blue: #5c6bc0;    /* Light blue for accents */
+            --dark-black: #2d3436;    /* Dark black from top bar */
+            --white: #ffffff;         /* White */
         }
 
         * {
@@ -138,6 +143,7 @@
             margin-bottom: 2rem;
             color: var(--secondary-color);
             font-weight: 500;
+            white-space: nowrap;
         }
 
         .profile-content p:last-of-type {
@@ -173,27 +179,106 @@
             }
         }
         
-    
-        /* Common Section Styles */
         section {
             padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
+        section:nth-child(odd) {
+            background: var(--dark-blue);
+            color: var(--white);
+        }
+
+        section:nth-child(odd) .section-title {
+            color: var(--white);
+        }
+        
         section:nth-child(even) {
-            background: var(--section-bg);
+            background: var(--white);
+            color: var(--dark-black);
         }
-
+        
+        section:nth-child(even) .section-title {
+            color: var(--dark-blue);
+        }
+        
+        /* Add decorative element for section transitions */
+        section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: inherit;
+            transform: skewY(-2deg);
+            z-index: 1;
+        }
+        
+        /* Update section containers */
         .section-container {
+            position: relative;
+            z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
         }
-
+        
+        /* Update section titles with accent line */
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
         }
-
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--medium-blue);
+        }
+        
+        /* Update project cards for dark sections */
+        section:nth-child(odd) .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Update contact items for dark sections */
+        section:nth-child(odd) .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        /* Update buttons for consistency */
+        .btn-download {
+            background: var(--medium-blue);
+        }
+        
+        .btn-download:hover {
+            background: var(--dark-blue);
+        }
+        
+        /* Add subtle gradient overlays for visual interest */
+        section:nth-child(odd)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+       
         /* Projects Grid */
         .projects-grid {
             display: grid;
