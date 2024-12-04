@@ -324,10 +324,13 @@
         
         .research-image, .project-image {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 200px;  /* Fixed height */
+            object-fit: contain;  /* This ensures the whole image is visible */
+            object-position: center;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background: #f5f6fa;  /* Light background for empty spaces */
+            padding: 10px;  /* Some padding around the image */
         }
         
         .research-content h3, .project-content h3 {
@@ -455,7 +458,6 @@
     <section id="research" data-aos="fade-up">
         <div class="section-container">
             <h2 class="section-title">Research</h2>
-            <p class="section-subtitle">Scientific Contributions and Publications</p>
             
             <div class="research-list">
                 <!-- Research Item 1 -->
@@ -476,13 +478,13 @@
                     </div>
                 </div>
             </div>
+            <div class="section-divider"></div>
         </div>
     </section>
 
     <section id="projects" data-aos="fade-up">
         <div class="section-container">
             <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">Recent Work and Achievements</p>
             
             <div class="projects-list">
                 <!-- Project Item 1 -->
@@ -503,6 +505,7 @@
                     </div>
                 </div>
             </div>
+            <div class="section-divider"></div>
         </div>
     </section>
 
