@@ -65,7 +65,17 @@
             color: var(--secondary-color);
         }
 
+        .highlight-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
         
+        .highlight-link:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+                
         .logo-container {
             position: relative;
             display: flex;
@@ -436,15 +446,16 @@
     <section id="about" data-aos="fade-up">
         <div class="section-container">
             <h2 class="section-title">About Me</h2>
-            <p> Hi, I'm Apoorv. I've been a part of <span class="highlight">Samsung Semiconductor India R&D</span> as a Hardware-Software Co-Design Engineer for the past three years. My area of professional 
+            <p> Hi, I'm Apoorv. I've been a part of <a href="https://semiconductor.samsung.com/ssir/" target="_blank" class="highlight-link">Samsung Semiconductor India R&D</a> as a Hardware-Software Co-Design Engineer for the past three years. My area of professional 
                 expertise is SoC RTL and micro-software Design, specifically developing clock & power management IP. I have worked on Samsung's trademark Exynos mobile chips and Generative AI Accelerator SoCs.
                 <br><br>
                 The scientific breakthrough that I am looking forward to the most is the development of a synthetic brain. I am curious about the intricate circuitry and learning mechanisms of the brain and 
                 the implications it can have on modern edge AI devices. My research interest broadly involves everything that can contribute towards this ultimate goal - neuro-inspired AI, 
                 neuromorphic computing, hardware-efficient learning algorithms, efficient computer architecture and computational neuroscience.
                 <br><br>
-                I am a proud alumnus of <span class="highlight">IIT Bombay</span> where I spent five memorable years earning a Dual Degree (B.Tech and M.Tech) in Electrical Engineering. My prior research 
-                experience has been in neuromorphic algorithms and biomimetic computational neuroscience.
+                I am a proud alumnus of IIT Bombay where I spent five memorable years earning a Dual Degree (B.Tech and M.Tech) in Electrical Engineering. My prior research 
+                experience has been in neuromorphic algorithms and biomimetic computational neuroscience under the supervision of
+                <a href="https://www.ee.iitb.ac.in/web/people/udayan-ganguly/" target="_blank" class="highlight-link">Prof. Udayan Ganguly</a>
                 <br><br>
                 Art has been a constant influence throughout my life. I view art as the ultimate source of expression, learning and connection with others. I often myself dancing and painting whenever I'm in
                 need of indulgence. I occasionally enjoy reading as well, my favorite non-fiction being the "Paradox of Choice" by Barry Schwartz. I like to connect with other people and learning from their 
@@ -464,7 +475,7 @@
                 <div class="research-item" data-aos="fade-up">
                     <img src="assets/research1.png" alt="Research Project 1" class="research-image">
                     <div class="research-content">
-                        <h3>Neural Network Optimization</h3>
+                        <h3><a href="research-project1.html" class="project-link">Neural Network Optimization</a></h3>
                         <p class="subtext">Developed novel techniques for optimizing neural networks in resource-constrained environments, achieving 40% improvement in efficiency.</p>
                     </div>
                 </div>
