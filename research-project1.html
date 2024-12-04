@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Apoorv Kishore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        :root {
+            --dark-gray: #2d3436;
+            --secondary-color: #0984e3;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            margin: 0;
+            padding: 0;
+        }
+
+        .detail-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: var(--dark-gray);
+            transform: translateX(-5px);
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .project-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin: 2rem 0;
+            background: #f5f6fa;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-content h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html#research" class="back-button" data-aos="fade-right">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+
+    <div class="detail-container">
+        <h1 class="project-title" data-aos="fade-down">Project Title Goes Here</h1>
+        
+        <div data-aos="fade-up" data-aos-delay="100">
+            <img src="project-image.jpg" alt="Project Image" class="project-image">
+        </div>
+        
+        <div class="project-content">
+            <div class="section" data-aos="fade-up" data-aos-delay="200">
+                <h2>Abstract</h2>
+                <p>Detailed project description goes here...</p>
+            </div>
+            
+            <div class="section" data-aos="fade-up" data-aos-delay="300">
+                <h2>Key Features</h2>
+                <p>List of key features...</p>
+            </div>
+            
+            <div class="section" data-aos="fade-up" data-aos-delay="400">
+                <h2>Technologies Used</h2>
+                <p>List of technologies...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 0
+        });
+    </script>
+</body>
+</html>
