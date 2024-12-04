@@ -223,6 +223,16 @@
             border-left: 3px solid var(--secondary-color);
         }
 
+        .project-link {
+            color: var(--dark-gray);    /* Makes the text black by default */
+            text-decoration: none;      /* Removes the underline */
+            transition: color 0.3s;     /* Smooth transition for hover effect */
+        }
+        
+        .project-link:hover {
+            color: var(--secondary-color);  /* Changes to blue on hover */
+        }
+
         .contact-info {
             margin-top: 2rem;
             font-size: 0.9rem;
@@ -476,7 +486,10 @@
                     <img src="assets/research1.png" alt="Research Project 1" class="research-image">
                     <div class="research-content">
                         <h3><a href="research-project1.html" class="project-link">Neural Network Optimization</a></h3>
-                        <p class="subtext">Developed novel techniques for optimizing neural networks in resource-constrained environments, achieving 40% improvement in efficiency.</p>
+                        <p>Developed novel techniques for optimizing neural networks in resource-constrained environments, achieving 40% improvement in efficiency.
+                        <br>
+                        <a href="assets/Resume2024_HW_applications.pdf" target="_self" class="highlight-link">Paper pdf</a>
+                        </p>
                     </div>
                 </div>
     
@@ -485,7 +498,8 @@
                     <img src="assets/research2.png" alt="Research Project 2" class="research-image">
                     <div class="research-content">
                         <h3>Semiconductor Architecture Innovation</h3>
-                        <p class="subtext">Investigated advanced architectural paradigms for next-generation semiconductor devices, focusing on power efficiency and performance scaling.</p>
+                        <p class="subtext">Investigated advanced architectural paradigms for next-generation semiconductor devices, focusing on power efficiency and 
+                            performance scaling.</p>
                     </div>
                 </div>
             </div>
@@ -503,7 +517,7 @@
                     <img src="assets/project1.jpg" alt="Project 1" class="project-image">
                     <div class="project-content">
                         <h3>AI Accelerator Design</h3>
-                        <p class="subtext">Led the development of a custom AI accelerator architecture, optimizing performance for machine learning workloads.</p>
+                        <p>Led the development of a custom AI accelerator architecture, optimizing performance for machine learning workloads.</p>
                     </div>
                 </div>
     
