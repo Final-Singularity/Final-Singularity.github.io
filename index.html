@@ -334,6 +334,16 @@
             padding: 1.5rem;
         }
 
+        .research-content h3 a.project-link {
+            color: var(--dark-gray) !important;    /* Force black color */
+            text-decoration: none !important;       /* Force remove underline */
+            transition: color 0.3s;
+        }
+        
+        .research-content h3 a.project-link:hover {
+            color: var(--secondary-color) !important;  /* Force blue on hover */
+        }
+        
         .research-item, .project-item {
             display: grid;
             grid-template-columns: 300px 1fr;
